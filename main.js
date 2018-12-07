@@ -65,7 +65,8 @@ let runTime = () => {
 
     /* FUNCTION FOR MINUTES */
     let minToWord = (x) =>{
-        if (x > 2 && x < 8){
+        if (x < 3) {
+        }else if (x < 8){
             time.push("FIVE")
         } else if (x < 13){
             time.push("TEN")
@@ -76,7 +77,7 @@ let runTime = () => {
         } else if (x < 28){
             time.push("TWENTYFIVE");
         } else if (x < 33){
-            time.push("THIRTY");
+            time.push("HALF");
         } else if (x < 58){
             console.log('logas'+ (60-m));
             minToWord((60-m));
@@ -85,7 +86,8 @@ let runTime = () => {
 
     minToWord(m);
 
-    if (m == 0){
+    if (m < 3 || 57 < m){
+        time.push("OCLOCK");
     } else if (m <= 30 ){
         time.push("PAST");
     } else {
@@ -96,9 +98,9 @@ let runTime = () => {
 
     numberToWord(h);
 
-    if (m == 0){
-        time.push("OCLOCK");
-    }
+    // if (m < 3 || 57 < m){
+    //     time.push("OCLOCK");
+    // }
 
 
     /* DRAW CLOCK */
